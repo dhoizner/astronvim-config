@@ -9,4 +9,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "s1n7ax/nvim-window-picker",
+  },
 }

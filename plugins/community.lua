@@ -8,5 +8,20 @@ return {
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.git.neogit" },
+  {
+    "NeogitOrg/neogit",
+    opts = {
+      disable_line_numbers = false,
+    },
+  },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  {
+    "catppuccin",
+    opts = {
+      integrations = {
+        window_picker = true,
+      },
+    },
+  },
 }
