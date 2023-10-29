@@ -27,14 +27,48 @@ return {
       end,
       desc = "Pick to close",
     },
+    ["<leader>bb"] = {
+      ":Telescope buffers<cr>",
+      desc = "List buffers",
+    },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    --
+    -- quick and dirty colemak
+    n = "j",
+    m = "h",
+    e = "k",
+    f = "w",
+    i = "l",
+    j = "t",
+    l = "u",
+    t = "f",
+    u = "i",
+    ["<leader>w"] = { name = "Windows" },
+    ["<leader>ww"] = {
+      function()
+        local window = require("window-picker").pick_window()
+        vim.api.nvim_set_current_win(window)
+      end,
+      desc = "Pick window",
+    },
+    ["<leader>wc"] = { ":close<cr>", desc = "Close window" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {
+    -- quick and dirty colemak
+    n = "j",
+    m = "h",
+    e = "k",
+    f = "w",
+    i = "l",
+    l = "u",
+    u = "i",
   },
 }
