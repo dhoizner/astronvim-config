@@ -37,8 +37,15 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     --
+    ["<leader>c"] = { "<Nop>", desc = "" },
+    ["<leader>gnt"] = { "<Nop>", desc = "" },
+    ["<leader>gg"] = { ":Neogit<cr>", desc = "Open Neogit Tab Page" },
     -- quick and dirty colemak
     n = "j",
+    ["<A-m>"] = { "<C-w>h" },
+    ["<A-n>"] = { "<C-w>j" },
+    ["<A-e>"] = { "<C-w>k" },
+    ["<A-i>"] = { "<C-w>l" },
     m = "h",
     e = "k",
     f = "w",
@@ -51,11 +58,21 @@ return {
     ["<leader>ww"] = {
       function()
         local window = require("window-picker").pick_window()
-        vim.api.nvim_set_current_win(window)
+        vim.api.nvim_set_current_win(window or 0)
       end,
       desc = "Pick window",
     },
     ["<leader>wc"] = { ":close<cr>", desc = "Close window" },
+    ["<leader>ws"] = { ":split<cr>", desc = "Split" },
+    ["<leader>wv"] = { ":vsplit<cr>", desc = "Vertical split" },
+    ["<leader><leader>"] = {
+      function() require("telescope.builtin").git_files() end,
+    },
+    ["<leader>."] = {
+      function() require("telescope.builtin").find_files { ["no_ignore"] = true, ["hidden"] = true } end,
+    },
+    ["<leader>f"] = { name = "Files" }, -- todo: figure out how to change "Find" to "Search" -.-
+    ["<leader>fs"] = { ":write<cr>", desc = "Save" },
   },
   t = {
     -- setting a mapping to false will disable it
