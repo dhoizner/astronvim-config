@@ -19,6 +19,7 @@ return {
   {
     "catppuccin",
     opts = {
+      transparent_background = true,
       integrations = {
         window_picker = true,
       },
@@ -93,4 +94,5 @@ return {
   --   },
   -- },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.project.projectmgr-nvim" },
 }
